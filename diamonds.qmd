@@ -1,0 +1,20 @@
+---
+title: "Untitled"
+format: html
+---
+
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(glue)
+```
+
+```{r}
+plot <- diamonds |> 
+    ggplot(aes(x = carat, y = price)) +
+    geom_point() +
+    labs(title = glue("Diamond Price by Carat for {Sys.Date()} {format(Sys.time(), \"%H:%M\")}"))
+
+plot
+```
